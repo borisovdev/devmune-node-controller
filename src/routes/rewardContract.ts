@@ -3,7 +3,7 @@ import web3 from '../services/web3';
 
 const router = express.Router();
 
-router.get(`/test-network`, (req, res) => {
+router.get(`/`, (req, res) => {
   web3.eth.net.getId((err, id) => {
     if (err) {
       res.status(500).json({message: err.message});
@@ -14,5 +14,5 @@ router.get(`/test-network`, (req, res) => {
   });
 });
 
-export const routeBasePath = "contracts";
+export const routeBasePath = "/reward-contract";
 export default router;
