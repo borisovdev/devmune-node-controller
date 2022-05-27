@@ -77,11 +77,11 @@ export default class ContributorsRatingExternalAdapter
       .map(([userLogin, contributionItems]) => {
         return {
           user_login: userLogin,
-          weight: contributionItems.length.toString(),
+          weight: contributionItems.length,
         };
       })
       .sort((a, b) => {
-        return parseInt(b.weight) - parseInt(a.weight);
+        return b.weight - a.weight;
       })
       .slice(0, options.usersInRatingLimit);
   }
